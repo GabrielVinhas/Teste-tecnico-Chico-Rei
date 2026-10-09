@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+
+  /* Um anel de foco consistente: a navegação por teclado precisa ser visível
+     em cima de papel claro, de foto e de fundo escuro. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ink ring-offset-2 ring-offset-paper;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5
+           text-sm font-semibold transition duration-200 ease-out
+           disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink text-paper hover:bg-ink-soft active:scale-[.98];
+  }
+
+  .btn-ghost {
+    @apply btn border border-ink/15 bg-transparent text-ink hover:border-ink/40 hover:bg-paper-dim;
+  }
+
+  /* Pastilha usada nos filtros de tipo. */
+  .chip {
+    @apply inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full
+           border px-3.5 py-1.5 text-sm font-medium transition duration-200 ease-out;
+  }
+
+  .chip-off {
+    @apply chip border-ink/15 bg-paper text-ink-soft hover:border-ink/40 hover:text-ink;
+  }
+
+  .chip-on {
+    @apply chip border-ink bg-ink text-paper;
+  }
+
+  /* Esqueleto de carregamento com brilho deslizante. */
+  .skeleton {
+    @apply relative overflow-hidden bg-paper-deep;
+  }
+
+  .skeleton::after {
+    @apply absolute inset-0 animate-shimmer;
+    content: '';
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  }
+}
+
+/* Esconde a barra de rolagem dos trilhos horizontais de filtro no mobile,
+   sem impedir o gesto de arrastar. */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
