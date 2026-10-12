@@ -67,10 +67,14 @@ npm run dev
 ```
 
 - Loja: <http://localhost:5173>
-- API: <http://localhost:3333/api>
+- API: <http://localhost:3333> — as rotas são `/products` e `/filters`
 
 Os dois processos sobem com um comando só (`concurrently`). Para rodá-los
 separadamente, use `npm run api` e `npx vite`.
+
+> O front chama `/api/products`, não `localhost:3333/products`. Quem traduz é o
+> proxy do Vite, que tira o `/api` antes de repassar. Acessar a API direto, sem
+> o proxy, é sem o prefixo.
 
 **3. Build de produção:**
 
@@ -382,7 +386,6 @@ na API para a listagem.
 - [x] Alterar quantidade e remover item
 - [x] Subtotal atualizado em tempo real
 - [x] Mesmo produto com variações diferentes vira itens separados
-
 - [x] Funciona em desktop e mobile
 
 **Diferenciais**
