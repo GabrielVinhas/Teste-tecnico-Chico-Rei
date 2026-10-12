@@ -1,7 +1,7 @@
 import { computed, ref, watch } from 'vue';
 import { defineStore } from 'pinia';
 
-const STORAGE_KEY = 'uma-penca:cart:v1';
+const STORAGE_KEY = 'teste-chico-rei:cart:v1';
 const MAX_QUANTITY = 99;
 
 // a linha do carrinho é a variação, não o produto: Preto/M e Preto/G são separados

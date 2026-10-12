@@ -10,7 +10,7 @@ const cart = useCartStore();
       <RouterLink
         :to="{ name: 'catalog' }"
         class="group flex items-center gap-2.5 rounded-full py-1 pr-2"
-        aria-label="Uma Penca, ir para a listagem"
+        aria-label="Teste Técnico Chico Rei, ir para a listagem"
       >
         <span
           class="grid h-9 w-9 place-items-center rounded-full bg-banana text-lg transition-transform duration-300 ease-out group-hover:-rotate-12"
@@ -20,7 +20,7 @@ const cart = useCartStore();
         </span>
 
         <span class="font-display text-lg font-extrabold leading-none tracking-tight">
-          Uma Penca
+          Teste Técnico Chico Rei
         </span>
       </RouterLink>
 

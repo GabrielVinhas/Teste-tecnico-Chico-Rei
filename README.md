@@ -1,4 +1,4 @@
-# Uma Penca — mini loja virtual
+# Teste Técnico Chico Rei — mini loja virtual
 
 Vitrine em Vue.js 2.7 inspirada em [umapenca.com/loja](https://umapenca.com/loja):
 listagem com filtros combináveis, página de produto com seleção de variações e
